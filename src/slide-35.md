@@ -32,4 +32,7 @@ fn main() {
     println!("{:#?}", root);
 }
 ```
+**Formatted print**
+
+<https://doc.rust-lang.org/rust-by-example/hello/print.html>
 

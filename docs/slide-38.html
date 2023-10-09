@@ -159,7 +159,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="automatic-memory-reclamation"><a class="header" href="#automatic-memory-reclamation">Automatic memory reclamation</a></h1>
+                        <h1 id="automatic-memory-reclamation-destructor"><a class="header" href="#automatic-memory-reclamation-destructor">Automatic memory reclamation (Destructor)</a></h1>
 <p><code>Box::new(node)</code> allocates on the heap and <code>node</code> is <em>moved</em> inside the box. Ownership of the box can move, but you
 can only get a reference to its content.</p>
 <p>The memory is automatically freed when the box has no more owner (it is &quot;dropped&quot;).</p>
@@ -184,6 +184,8 @@ fn main() {
    
     println!(&quot;Exiting&quot;);
 }</code></pre></pre>
+<p><strong>std::ops::Drop</strong></p>
+<p><a href="https://doc.rust-lang.org/std/ops/trait.Drop.html">https://doc.rust-lang.org/std/ops/trait.Drop.html</a></p>
 
                     </main>
 

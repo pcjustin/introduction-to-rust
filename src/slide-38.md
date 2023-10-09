@@ -1,5 +1,5 @@
 
-# Automatic memory reclamation
+# Automatic memory reclamation (Destructor)
 
 `Box::new(node)` allocates on the heap and `node` is _moved_ inside the box. Ownership of the box can move, but you
 can only get a reference to its content.
@@ -29,4 +29,7 @@ fn main() {
     println!("Exiting");
 }
 ```
+**std::ops::Drop**
+
+<https://doc.rust-lang.org/std/ops/trait.Drop.html>
 
