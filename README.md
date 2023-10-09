@@ -1,9 +1,5 @@
 # Introduction to Rust
 
-These are the slides of the talk I gave at the first session of the [Toulouse Rust meetup](https://www.meetup.com/fr-FR/Toulouse-Rust-Meetup/) in January 2019.
-
-The rendered version at [https://swallez.github.io/introduction-to-rust/](https://swallez.github.io/introduction-to-rust/slide-1.html)
-
 ### How this presentation was prepared
 
 The slides are rendered using [mdBook](http://rust-lang-nursery.github.io/mdBook/), the same tool used to render the [Rust Book](https://doc.rust-lang.org/book/). Along with being a dogfooding experiment, this allows the code examples to be run or even modified from the presentation itself. Live coding within the slideshow is pretty cool!
