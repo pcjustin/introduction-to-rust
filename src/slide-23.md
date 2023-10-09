@@ -1,16 +1,19 @@
 
-# Destructuring assigment
+# More pattern matching
 
 &nbsp;
 
 ```rust,editable
 fn main() {
-    let v = vec![10, 20, 30];    
-    let idx = 0;
-    
-    if let Some(value) = v.get(idx) {
-        println!("Value is {}", value);
-    }
+    let n = 0;
+    let text = match n {
+        0 => "zero",
+        1 => "one",
+        2 => "two",
+        _ => "many",
+    };
+
+    println!("{} is {}", n, text);
 }
 ```
 

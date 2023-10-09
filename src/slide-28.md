@@ -1,7 +1,8 @@
 
-# Struct methods
+# Variations on `self`
 
 ```rust,editable
+#[derive(Debug)]
 struct Person {
     first_name: String,
     last_name: String
@@ -14,17 +15,31 @@ impl Person {
             last_name: name.to_string()
         }
     }
-    
+
     fn full_name(&self) -> String {
-        format!("{} {}", self.first_name, self.last_name)
+        format!("{} {}",self.first_name, self.last_name)
     }
 
+    fn set_first_name(&mut self, name: &str) {
+        self.first_name = name.to_string();
+    }
+
+    fn to_tuple(self) -> (String, String) {
+        (self.first_name, self.last_name)
+    }
 }
 
 fn main() {
-    let p = Person::new("John","Smith");
-    println!("This is {}", p.full_name());
-}
+    let mut p = Person::new("John","Smith");
+    println!("{:?}", p);
 
+    p.set_first_name("Jane");
+    println!("{:?}", p);
+
+    println!("{:?}", p.to_tuple());
+    
+    // p has now moved, below will fail to compile
+    // println!("{:?}", p);
+}
 ```
 

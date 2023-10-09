@@ -1,23 +1,17 @@
 
-# Hello, Rust!
+# Control structures
 
-Cargo.toml
-
-```
-[package]
-name = "rust_intro"
-version = "0.1.0"
-authors = ["Sylvain Wallez <sylvain@bluxte.net>"]
-edition = "2018"
-
-[dependencies]
-```
-
-main.rs
+&nbsp;
 
 ```rust,editable
 fn main() {
-    println!("Hello, world!");
+    for i in 0..5 {
+        if i % 2 == 0 {
+            println!("{} is even", i);
+        } else {
+            println!("{} is odd", i);
+        }
+    }
 }
 ```
 

@@ -1,16 +1,15 @@
 
-# Pattern matching
+# Destructuring assigment
 
 &nbsp;
 
 ```rust,editable
 fn main() {
-    let v = vec![10, 20, 30]; // initialization macro    
+    let v = vec![10, 20, 30];    
     let idx = 0;
     
-    match v.get(idx) {
-        Some(value) => println!("Value is {}", value),
-        None => println!("No value..."),
+    if let Some(value) = v.get(idx) {
+        println!("Value is {}", value);
     }
 }
 ```

@@ -44,4 +44,3 @@
 - [Slide 41](slide-41.md)
 - [Slide 42](slide-42.md)
 - [Slide 43](slide-43.md)
-- [Slide 44](slide-44.md)

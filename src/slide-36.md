@@ -1,33 +1,47 @@
 
-# Box: dynamic allocation
+# A generic sorted tree
 
 ```rust,editable
 #[derive(Debug)]
-struct Node {
-    value: String,
-    left: Option<Box<Node>>,
-    right: Option<Box<Node>>,
+struct Node<T> {
+    value: T,
+    left: Option<Box<Node<T>>>,
+    right: Option<Box<Node<T>>>,
 }
 
-impl Node {
-    fn new(s: &str) -> Node {
-        Node{value: s.to_string(), left: None, right: None}
+impl<T: Ord> Node<T> {
+    fn new(v: T) -> Node<T> {
+        Node{value: v, left: None, right: None}
     }
 
-    fn set_left(&mut self, node: Node) {
+    fn set_left(&mut self, node: Node<T>) {
         self.left = Some(Box::new(node));
     }
 
-    fn set_right(&mut self, node: Node) {
+    fn set_right(&mut self, node: Node<T>) {
         self.right = Some(Box::new(node));
+    }
+    
+    fn insert(&mut self, data: T) {
+        if data < self.value {       // <-- Ord is used here
+            match self.left {
+                Some(ref mut n) => n.insert(data),
+                None => self.set_left(Self::new(data)),
+            }
+        } else {
+            match self.right {
+                Some(ref mut n) => n.insert(data),
+                None => self.set_right(Self::new(data)),
+            }
+        }
     }
 }
 
-
 fn main() {
-    let mut root = Node::new("root");
-    root.set_left(Node::new("left"));
-    root.set_right(Node::new("right"));
+    let mut root = Node::new("root".to_string());
+    root.insert("one".to_string());
+    root.insert("two".to_string());
+    root.insert("four".to_string());
 
     println!("{:#?}", root);
 }

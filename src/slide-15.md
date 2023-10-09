@@ -1,15 +1,20 @@
 
-# Immutability by default
+# Passing values by reference
 
 &nbsp;
 
 ```rust,editable
+fn is_even(i: &i32) -> bool {
+    i % 2 == 0
+}
+
 fn main() {
-    let mut sum = 0;
-    for i in 0..5 {
-        sum += i;
-    }
-    println!("sum is {}", sum);
+    let sum: i32 =
+        (0..5)                   // this is an iterator  
+        .filter(|i| is_even(i))  // filter with a closure
+        .sum();                  // consume the iterator
+            
+    println!("sum of even numbers is {}", sum);
 }
 ```
 

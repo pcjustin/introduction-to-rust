@@ -1,19 +1,22 @@
 
-# More pattern matching
+# Tuples
 
 &nbsp;
 
 ```rust,editable
-fn main() {
-    let n = 0;
-    let text = match n {
-        0 => "zero",
-        1 => "one",
-        2 => "two",
-        _ => "many",
-    };
+fn add_mul(x: f64, y: f64) -> (f64, f64) {
+    (x + y, x * y)
+}
 
-    println!("{} is {}", n, text);
+fn main() {
+    let t = add_mul(2.0, 10.0);
+
+    println!("tuple is {:?}", t);
+
+    println!("add {} mul {}", t.0, t.1);
+
+    let (add, mul) = t;
+    println!("add {} mul {}", add, mul);
 }
 ```
 

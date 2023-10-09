@@ -1,22 +1,20 @@
 
-# Tuples
+# Structs
 
 &nbsp;
 
 ```rust,editable
-fn add_mul(x: f64, y: f64) -> (f64, f64) {
-    (x + y, x * y)
+struct Person {
+    first_name: String,
+    last_name: String
 }
 
 fn main() {
-    let t = add_mul(2.0, 10.0);
-
-    println!("tuple is {:?}", t);
-
-    println!("add {} mul {}", t.0, t.1);
-
-    let (add, mul) = t;
-    println!("add {} mul {}", add, mul);
+    let p = Person {
+        first_name: "John".to_string(),
+        last_name: "Smith".to_string()
+    };
+    println!("This is {} {}", p.first_name, p.last_name);
 }
 ```
 

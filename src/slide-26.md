@@ -1,7 +1,5 @@
 
-# Structs
-
-&nbsp;
+# Struct implementation
 
 ```rust,editable
 struct Person {
@@ -9,12 +7,20 @@ struct Person {
     last_name: String
 }
 
+impl Person {
+    fn new(first: &str, name: &str) -> Person {
+        Person {
+            first_name: first.to_string(),
+            last_name: name.to_string()
+        }
+    }
+}
+
 fn main() {
-    let p = Person {
-        first_name: "John".to_string(),
-        last_name: "Smith".to_string()
-    };
-    println!("This is {} {}", p.first_name, p.last_name);
+    let p = Person::new("John","Smith");
+    println!("This is {} {}", p.first_name,p.last_name);
 }
 ```
+
+(`String` are objects, `&str` are references to char arrays)
 

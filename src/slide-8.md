@@ -1,26 +1,24 @@
 
-# The Rust ecosystem
+# Hello, Rust!
 
-<div style="float: left; width: 47%;">
+Cargo.toml
 
-![](media/crates-io-2.jpg)
+```
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
 
-</div>
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-<div style="float: right; width: 47%">
+[dependencies]
+```
 
-**crates.io – there’s a crate for that!**
+main.rs
 
-Twitter: @rustlang, @ThisWeekInRust  
-https://users.rust-lang.org  
-https://exercism.io/
-
-http://www.arewewebyet.org/  
-http://arewegameyet.com/  
-https://areweideyet.com/  
-http://www.arewelearningyet.com/
-https://docs.rust-embedded.org/
-
-</div>
-<div style="clear: both"></div>
+```rust,editable
+fn main() {
+    println!("Hello, world!");
+}
+```
 

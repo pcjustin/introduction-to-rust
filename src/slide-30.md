@@ -1,13 +1,9 @@
 
-# Struct implementations: wrapping up
+<div class="title">
 
+# Ownership and borrows
 
-* no `self` argument: associated functions, like the `new` "constructor"
+### There can be only one owner
 
-* `&self` argument: can use the values of the struct, but not change them
-
-* `&mut self` argument: can modify the values
-
-* `self` argument: will consume the value, which will move
-
+</div>
 

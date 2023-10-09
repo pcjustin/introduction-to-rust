@@ -1,18 +1,13 @@
 
-# Learning Rust
+# Getting started: rustup & cargo
 
-<div style="float: left; width: 40%;">
+## Rustup: the Rust toolchain manager
 
-![](media/book-oreilly-2.jpg)
+Manage versions, target OS and architectures
 
-</div>
+Latest version: 1.73.0
 
-<div style="float: right; width: 40%; text-align: center">
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-![](media/book-nostarch.png)
-
-<small> Online at https://www.rust-lang.org/ </small>
-
-</div>
-<div style="clear: both"></div>
+`rustup doc --std` -- browse the docs locally! (Link to `https://doc.rust-lang.org/std/index.html`)
 

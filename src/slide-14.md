@@ -1,7 +1,7 @@
 
-# Function declaration
+# Functional iteration
 
-Parameters and return types must be explicit
+&nbsp;
 
 ```rust,editable
 fn is_even(i: i32) -> bool {
@@ -9,10 +9,14 @@ fn is_even(i: i32) -> bool {
 }
 
 fn main() {
-    for i in 0..5 {
-        let even_odd = if is_even(i) {"even"} else {"odd"};
-        println!("{} is {}", i, even_odd);
-    }
+    let sum: i32 =
+        (0..5)                   // this is an iterator
+        .filter(|i| is_even(*i)) // filter with a closure
+        .sum();                  // consume the iterator
+        
+    println!("sum of even numbers is {}", sum);
 }
 ```
+
+<https://doc.rust-lang.org/nightly/std/iter/trait.Iterator.html#method.filter>
 

@@ -1,5 +1,5 @@
 
-# Functional iteration
+# Functional iteration (Passing by value)
 
 &nbsp;
 
@@ -17,4 +17,6 @@ fn main() {
     println!("sum of even numbers is {}", sum);
 }
 ```
+
+**passing by value usually means moving the ownership of the object**
 

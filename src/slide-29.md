@@ -1,45 +1,13 @@
 
-# Variations on `self`
+# Struct implementations: wrapping up
 
-```rust,editable
-#[derive(Debug)]
-struct Person {
-    first_name: String,
-    last_name: String
-}
 
-impl Person {
-    fn new(first: &str, name: &str) -> Person {
-        Person {
-            first_name: first.to_string(),
-            last_name: name.to_string()
-        }
-    }
+* no `self` argument: associated functions, like the `new` "constructor"
 
-    fn full_name(&self) -> String {
-        format!("{} {}",self.first_name, self.last_name)
-    }
+* `&self` argument: can use the values of the struct, but not change them
 
-    fn set_first_name(&mut self, name: &str) {
-        self.first_name = name.to_string();
-    }
+* `&mut self` argument: can modify the values
 
-    fn to_tuple(self) -> (String, String) {
-        (self.first_name, self.last_name)
-    }
-}
+* `self` argument: will consume the value, which will move
 
-fn main() {
-    let mut p = Person::new("John","Smith");
-    println!("{:?}", p);
-
-    p.set_first_name("Jane");
-    println!("{:?}", p);
-
-    println!("{:?}", p.to_tuple());
-    
-    // p has now moved, below will fail to compile
-    // println!("{:?}", p);
-}
-```
 

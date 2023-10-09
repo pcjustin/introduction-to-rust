@@ -1,15 +1,20 @@
 
-# Rust
+# The Rust ecosystem
 
-"Empowering everyone to build reliable and efficient software"
+<div style="float: left; width: 47%;">
 
-* Performance: blazingly fast and memory efficient.
-* Reliability: rich type system & ownership model guarantee memory safety & thread safety.
-* Productivity: great documentation, friendly compiler, awesome tooling.
+![](media/crates-io-2.jpg)
 
-<center>
+</div>
 
-![](media/ferris.gif)
+<div style="float: right; width: 47%">
 
-</center>
+**crates.io – there’s a crate for that!**
+
+<https://crates.io/>
+
+<https://doc.rust-lang.org/std/index.html>
+
+</div>
+<div style="clear: both"></div>
 

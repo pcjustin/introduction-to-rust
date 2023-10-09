@@ -1,12 +1,17 @@
 
-# Some, None? The Option enum
+# Pattern matching
 
 &nbsp;
 
-```rust,no_run
-pub enum Option<T> {
-    None,
-    Some(T),
+```rust,editable
+fn main() {
+    let v = vec![10, 20, 30]; // initialization macro    
+    let idx = 0;
+    
+    match v.get(idx) {
+        Some(value) => println!("Value is {}", value),
+        None => println!("No value..."),
+    }
 }
 ```
 

@@ -1,36 +1,14 @@
 
-# The `Error` type
+# There's a lot more to talk about...
 
-```rust
-pub enum Result<T, E> {
-    /// Contains the success value
-    Ok(T),
-    /// Contains the error value
-    Err(E),
-}
-```
+* shared references with reference counting
+* multithreading and the `Sync` and `Send` traits
+* `Mutex` and `RwLock` from the standard library
+* async programming
+* interior mutability
+* etc...
 
-Reading a file with proper error handling:
+Compared to other languages, Rust is simple but has non conventional features that are its strength.
 
-```rust,editable
-use std::fs::File;
-use std::path::Path;
-use std::io::Read;
-
-fn read_file() -> Result<String, std::io::Error> {
-    let mut text = String::new();
-    let path = Path::new("file.txt");
-    
-    let mut file = File::open(path)?;
-    file.read_to_string(&mut text)?;
-    
-    return Ok(text);
-}
-
-fn main() -> Result<(), std::io::Error>{
-    let str = read_file()?;
-    println!("Text is {}", str);
-    Ok(())
-}
-```
+If you want to use it, take the time to _learn_ it. Ferris will thank you :-)
 

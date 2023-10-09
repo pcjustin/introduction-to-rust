@@ -1,5 +1,5 @@
 
-# Extending existing types
+# Adding type constraints
 
 ```rust,editable
 trait Show {
@@ -12,19 +12,20 @@ impl Show for i32 {
     }
 }
 
-impl Show for f64 {
+impl<T> Show for Option<T> where T: Show {
     fn show(&self) -> String {
-        format!("an eight-byte float {}", self)
+        match self {
+            Some(v) => v.show(),
+            None => format!("nothing"),
+        }
     }
 }
 
 fn main() {
-    let answer = 42;
-    let pi = 3.14;
+    let answer = Some(42);
+    let void: Option<i32> = None;
     println!("Here is {}", answer.show());
-    println!("Here is {}", pi.show());
+    println!("Here is {}", void.show());
 }
 ```
-
-Sweet, we've added new methods to `i32` and `f64`!
 

@@ -1,31 +1,35 @@
 
-# Adding type constraints
+# Box: dynamic allocation
 
 ```rust,editable
-trait Show {
-    fn show(&self) -> String;
+#[derive(Debug)]
+struct Node {
+    value: String,
+    left: Option<Box<Node>>,
+    right: Option<Box<Node>>,
 }
 
-impl Show for i32 {
-    fn show(&self) -> String {
-        format!("a four-byte signed {}", self)
+impl Node {
+    fn new(s: &str) -> Node {
+        Node{value: s.to_string(), left: None, right: None}
+    }
+
+    fn set_left(&mut self, node: Node) {
+        self.left = Some(Box::new(node));
+    }
+
+    fn set_right(&mut self, node: Node) {
+        self.right = Some(Box::new(node));
     }
 }
 
-impl<T> Show for Option<T> where T: Show {
-    fn show(&self) -> String {
-        match self {
-            Some(v) => v.show(),
-            None => format!("nothing"),
-        }
-    }
-}
 
 fn main() {
-    let answer = Some(42);
-    let void: Option<i32> = None;
-    println!("Here is {}", answer.show());
-    println!("Here is {}", void.show());
+    let mut root = Node::new("root");
+    root.set_left(Node::new("left"));
+    root.set_right(Node::new("right"));
+
+    println!("{:#?}", root);
 }
 ```
 

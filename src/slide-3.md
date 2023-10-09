@@ -1,10 +1,5 @@
 
-# On the menu
+# Build it in Rust 
 
-- Where does Rust come from?
-- Basics: functions, structures, methods
-- Controlled mutability
-- Ad hoc polymorphism with traits
-- Memory management
-- Controlled concurrency
+![](media/build-it-in-rust.png)
 

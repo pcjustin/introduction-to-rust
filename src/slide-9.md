@@ -1,24 +1,14 @@
 
-# Getting started: rustup & cargo
+# Variables & type inference
 
-## Rustup: the Rust toolchain manager
+&nbsp;
 
-Manage versions, target OS and architectures
-
-`curl https://sh.rustup.rs -sSf | sh` or download from https://rustup.rs/
-
-`rustup doc --std` -- browse the docs locally!
-
-## Cargo: the Rust build system
-
-```
-cargo new --bin rust_intro
-cargo run
-```
-
-```
-.
-├── Cargo.toml
-└── src
-    └── main.rs
+```rust,editable
+fn main() {
+    let answer = 42;
+    
+    println!("Hello {}", answer);
+    
+    assert_eq!(answer,42);
+}
 ```

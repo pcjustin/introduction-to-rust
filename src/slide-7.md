@@ -1,20 +1,20 @@
 
-# Rust
+# Cargo: the Rust build tool and package manager
 
-* Started in 2006 at Mozilla, first announced in 2010
-  * Primary goals: a fast and secure language
-  * Parts of Firefox are written in Rust
-  
-* First stable release in 2015
-  * New releases every 6 weeks, “edition 2021” released in Oct '21
 
-* Who uses it?
-  * AWS: Firecracker powers Lambda and Fargate
-  * Google: parts of the Fuschia operating system
-  * Linux: 2nd official language for the Kernel!
-  * CloudFlare: quic / http 3 implementation
-  * Dropbox: file storage
-  * Clever Cloud: reverse proxy
-  * Atlassian, Canonical, Coursera, Chef, Deliveroo, NPM, Sentry… 
-  * Growing ecosystem for embedded development
+* build your project with cargo build
+* run your project with cargo run
+* test your project with cargo test
+* build documentation for your project with cargo doc
+* publish a library to crates.io with cargo publish
 
+```
+cargo new hello
+```
+
+```
+.
+├── Cargo.toml
+└── src
+    └── main.rs
+```

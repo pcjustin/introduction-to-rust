@@ -1,14 +1,15 @@
 
-# If as an expression
+# Immutability by default
 
 &nbsp;
 
 ```rust,editable
 fn main() {
+    let mut sum = 0;
     for i in 0..5 {
-        let even_odd = if i % 2 == 0 {"even"} else {"odd"};
-        println!("{} is {}", i, even_odd);
+        sum += i;
     }
+    println!("sum is {}", sum);
 }
 ```
 

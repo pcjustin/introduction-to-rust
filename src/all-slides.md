@@ -10,110 +10,27 @@
 
 </div>
 
------------------
+----------------
 
-# Who's this guy?
+# Why Rust? 
 
-<div style="float: left; padding-right: 1em; width: 25%">
-
-![](media/Sylvain-Wallez-sq-1024.jpg)
-
-</div>
-<div style="margin-left: 25%">
-
-### Sylvain Wallez - @bluxte
-
-### Principal engineer - Elastic
-
-Previously tech lead, CTO, architect, trainer, developer...  
-...at OVH, Actoboard, Sigfox, Scoop.it, Joost, Anyware
-
-Member of the Apache Software Foundation since 2003
-
-</div>
-
-<center class="clear">
-
-<img src="media/logo-elastic.svg" style="height: 2em;"><br>We're hiring!
-
-</center>
-
------------------
-
-# On the menu
-
-- Where does Rust come from?
-- Basics: functions, structures, methods
-- Controlled mutability
-- Ad hoc polymorphism with traits
-- Memory management
-- Controlled concurrency
+* Performance
+* Reliability
+* Productivity
 
 ----------------
 
-# Rust
+# Build it in Rust 
 
-"Empowering everyone to build reliable and efficient software"
-
-* Performance: blazingly fast and memory efficient.
-* Reliability: rich type system & ownership model guarantee memory safety & thread safety.
-* Productivity: great documentation, friendly compiler, awesome tooling.
-
-----------------
-
-# Rust
-
-"Empowering everyone to build reliable and efficient software"
-
-* Performance: blazingly fast and memory efficient.
-* Reliability: rich type system & ownership model guarantee memory safety & thread safety.
-* Productivity: great documentation, friendly compiler, awesome tooling.
-
-<center>
-
-![](media/ferris.gif)
-
-</center>
+![](media/build-it-in-rust.png)
 
 ----------------
 
 # Learning Rust
 
-<div style="float: left; width: 40%;">
+**Recommend**
 
-![](media/book-oreilly-2.jpg)
-
-</div>
-
-<div style="float: right; width: 40%; text-align: center">
-
-![](media/book-nostarch.png)
-
-<small> Online at https://www.rust-lang.org/ </small>
-
-</div>
-<div style="clear: both"></div>
-
-----------------
-
-# Rust
-
-* Started in 2006 at Mozilla, first announced in 2010
-  * Primary goals: a fast and secure language
-  * Parts of Firefox are written in Rust
-  
-* First stable release in 2015
-  * New releases every 6 weeks, “edition 2021” released in Oct '21
-
-* Who uses it?
-  * AWS: Firecracker powers Lambda and Fargate
-  * Google: parts of the Fuschia operating system
-  * Linux: 2nd official language for the Kernel!
-  * CloudFlare: quic / http 3 implementation
-  * Dropbox: file storage
-  * Clever Cloud: reverse proxy
-  * Atlassian, Canonical, Coursera, Chef, Deliveroo, NPM, Sentry… 
-  * Growing ecosystem for embedded development
+<https://doc.rust-lang.org/rust-by-example/>
 
 -----------------
 
@@ -129,15 +46,9 @@ Member of the Apache Software Foundation since 2003
 
 **crates.io – there’s a crate for that!**
 
-Twitter: @rustlang, @ThisWeekInRust  
-https://users.rust-lang.org  
-https://exercism.io/
+<https://crates.io/>
 
-http://www.arewewebyet.org/  
-http://arewegameyet.com/  
-https://areweideyet.com/  
-http://www.arewelearningyet.com/
-https://docs.rust-embedded.org/
+<https://doc.rust-lang.org/std/index.html>
 
 </div>
 <div style="clear: both"></div>
@@ -150,15 +61,25 @@ https://docs.rust-embedded.org/
 
 Manage versions, target OS and architectures
 
-`curl https://sh.rustup.rs -sSf | sh` or download from https://rustup.rs/
+Latest version: 1.73.0
 
-`rustup doc --std` -- browse the docs locally!
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-## Cargo: the Rust build system
+`rustup doc --std` -- browse the docs locally! (Link to `https://doc.rust-lang.org/std/index.html`)
+
+--------------
+
+# Cargo: the Rust build tool and package manager
+
+
+* build your project with cargo build
+* run your project with cargo run
+* test your project with cargo test
+* build documentation for your project with cargo doc
+* publish a library to crates.io with cargo publish
 
 ```
-cargo new --bin rust_intro
-cargo run
+cargo new hello
 ```
 
 ```
@@ -175,10 +96,11 @@ Cargo.toml
 
 ```
 [package]
-name = "rust_intro"
+name = "hello"
 version = "0.1.0"
-authors = ["Sylvain Wallez <sylvain@bluxte.net>"]
-edition = "2018"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 ```
@@ -295,6 +217,8 @@ fn main() {
 }
 ```
 
+<https://doc.rust-lang.org/nightly/std/iter/trait.Iterator.html#method.filter>
+
 ---------------
 
 # Passing values by reference
@@ -315,6 +239,29 @@ fn main() {
     println!("sum of even numbers is {}", sum);
 }
 ```
+
+---------------
+
+# Functional iteration (Passing by value)
+
+&nbsp;
+
+```rust,editable
+fn is_even(i: i32) -> bool {
+    i % 2 == 0
+}
+
+fn main() {
+    let sum: i32 =
+        (0..5)                   // this is an iterator
+        .filter(|i| is_even(*i)) // filter with a closure
+        .sum();                  // consume the iterator
+        
+    println!("sum of even numbers is {}", sum);
+}
+```
+
+**passing by value usually means moving the ownership of the object**
 
 ---------------
 
@@ -654,7 +601,7 @@ fn main() {
 
 ---------------
 
-# Extending existing types
+# Extending existing types (C++ Overloading)
 
 ```rust,editable
 trait Show {

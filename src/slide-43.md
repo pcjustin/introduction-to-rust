@@ -1,14 +1,18 @@
 
-# There's a lot more to talk about...
+<div class="title">
 
-* shared references with reference counting
-* multithreading and the `Sync` and `Send` traits
-* `Mutex` and `RwLock` from the standard library
-* async programming
-* interior mutability
-* etc...
+# Thanks!
 
-Compared to other languages, Rust is simple but has non conventional features that are its strength.
+![](media/ferris.gif)
 
-If you want to use it, take the time to _learn_ it. Ferris will thank you :-)
+&nbsp;
+
+&nbsp;
+
+<span style="font-size: 70%">
+    Presentation contents inspired by https://stevedonovan.github.io/rust-gentle-intro/<br>
+    Sources available at https://github.com/swallez/introduction-to-rust/
+</span>
+
+</div>
 
